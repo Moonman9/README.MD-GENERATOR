@@ -91,8 +91,8 @@ function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
 function init() {
-    questions((answers) =>{
-        console.log(answers)
+    questions((data) =>{
+        console.log(data)
     })
     .catch((err) => {
         if (err) {
