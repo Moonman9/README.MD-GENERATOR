@@ -10,7 +10,7 @@ const questions = () => {
         .prompt([
             {
                 type: 'input',
-                message: 'Please provide an accurate name for the project:',
+                message: 'Please provide an accurate title for the project:',
                 name: 'title',
                 validate: validInput => {
                     if(validInput) {
@@ -87,14 +87,11 @@ const questions = () => {
 };
 
 // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
-// function init() {}
-
-// Function call to initialize app
-questions()
-    .then((answers) =>{
+function init() {
+    questions((answers) =>{
         console.log(answers)
     })
     .catch((err) => {
@@ -102,3 +99,7 @@ questions()
             console.log('error')
         }
     })
+}
+
+// Function call to initialize app
+init();
