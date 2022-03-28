@@ -1,7 +1,9 @@
 // TODO: Include packages needed for this application
+const path = require("path");
 const fs = require('fs'); // enables interaction with file system
 var inquirer = require('inquirer'); //package required to interract with questions in the console
-const markdown = require('./utils/generateMarkdown'); //page link to fire functions for cleaner code
+const generateMarkdown = require('./utils/generateMarkdown');
+// const generateMarkdown = require('./utils/generateMarkdown'); //page link to fire functions for cleaner code
 
 // TODO: Create an array of questions for user input
 const questions = () => {
@@ -66,7 +68,7 @@ const questions = () => {
                 type: 'list',
                 message: 'Please choose a license you would like to include for this app:',
                 name: 'license',
-                choices: ['MIT License', 'Apache License 2.0', 'Mozilla Public License 2.0', 'GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3']
+                choices: ['MIT ', 'Apache 2.0', 'Mozilla Public 2.0', 'GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3']
             },
             {
                 type: 'input',
@@ -80,17 +82,20 @@ const questions = () => {
             },
             {
                 type: 'input',
-                message: 'Please provide proper iunstructions on how to best reach you:',
+                message: 'Please provide proper instructions on how to best reach you:',
                 name: 'contact'
             }
         ])
 };
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    fs.writeFileSync(path.join(process.cwd(), fileName), data);
+}
 
 // TODO: Create a function to initialize app
 function init() {
+
     questions((data) =>{
         console.log(data)
     })
@@ -98,6 +103,10 @@ function init() {
         if (err) {
             console.log('error')
         }
+    })
+    .then(function(data) {
+        writeToFile("README.md", generateMarkdown({...data}));
+        console.log("Your README.md has been successfully generated!")
     })
 }
 
