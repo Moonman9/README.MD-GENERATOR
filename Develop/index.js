@@ -68,7 +68,7 @@ const questions = () => {
                 type: 'list',
                 message: 'Please choose a license you would like to include for this app:',
                 name: 'license',
-                choices: ['MIT ', 'Apache 2.0', 'Mozilla Public 2.0', 'GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3']
+                choices: ['MIT', 'Apache 2.0', 'Mozilla Public 2.0', 'GNU AGPLv3', 'GNU GPLv3', 'GNU LGPLv3']
             },
             {
                 type: 'input',
@@ -77,13 +77,19 @@ const questions = () => {
             },
             {
                 type: 'input',
-                message: 'Please provide an email that can be used for application inquiries',
+                message: 'Please provide an email that can be used for application inquiries:',
                 name: 'email'
             },
             {
                 type: 'input',
                 message: 'Please provide proper instructions on how to best reach you:',
                 name: 'contact'
+            },
+            {
+                type: 'input',
+                message: 'Please provide a link to the deployable website (if applicable):',
+                name: 'link',
+                default: '❌'
             }
         ])
 };
