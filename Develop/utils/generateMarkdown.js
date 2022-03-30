@@ -64,9 +64,9 @@ _____
   📨
     P.s. ${data.contact}
 
-  [Github Profile](https://github.com/${data.username})
+  [Github Profile](https://github.com/${data.github})
 
-  [Email](${data.email})
+  [Email](mailto:${data.email})
   
   #### Website
   🖼️
