@@ -36,29 +36,40 @@ _____
   - [Questions](#questions)
   - [Website](#website)
 
-  ### Description 📖
+  ### Description
+  📖
     ${data.description}
 
-  ### Installation 💾
+  ### Installation
+
+  💾
     ${data.installation}
 
-  ### Usage 💻
+  ### Usage
+
+  💻
     ${data.utalization}
 
-  ### Contributions 🔗
+  ### Contributions
+
+  🔗
     ${data.contributions}
 
-  ### Testing 🧪
+  ### Testing
+  
+  🧪
     ${data.testing}
 
-  ### Questions 📨
+  ### Questions 
+  📨
     P.s. ${data.contact}
 
   [Github Profile](https://github.com/${data.username})
 
   [Email](${data.email})
   
-  #### Website ⬅️
+  #### Website
+  🖼️
   [Click Here!](${data.link})
 
 `;
